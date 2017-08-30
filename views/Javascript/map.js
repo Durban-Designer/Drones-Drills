@@ -1,3 +1,4 @@
+//purpose: To serve as Angular Map App main
 angular.module("MyGame", []);
 
 class MapController {

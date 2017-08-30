@@ -1,3 +1,4 @@
+//purpose:To Generate Quadrants
 /* Contents Key
 0 = empty space
 x = stone
@@ -51,38 +52,4 @@ function QuadrantGen() {
     y++;
   }
   $(".quadrant:last").html('"[' + quadrant[y-1] + ']"')
-}
-
-function post() {
-  var newQuadrant = {
-    "name": $(".name").val(),
-    "location": $(".location").val(),
-    "size": $(".size").val(),
-    "contents": "[" + $(".box").val() + "]",
-    "empire": $(".empire").val()
-  }
-  // Use AJAX to post the object to our quadrant service
-  $.ajax({
-      type: 'POST',
-      data: newQuadrant,
-      url: '/quadrants',
-      dataType: 'JSON'
-  }).done(function( response ) {
-
-      // Check for successful (blank) response
-      if (response.msg === '') {
-        // Clear the form inputs
-          $(".name").val("");
-          $(".location").val("");
-          $(".size").val("");
-          $(".box").val("");
-          $(".empire").val("");
-      }
-      else {
-
-          // If something goes wrong, alert the error message that our service returned
-          alert('Error: ' + response.msg);
-
-      }
-  });
 }

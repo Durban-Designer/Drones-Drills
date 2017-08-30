@@ -1,3 +1,4 @@
+//purpose: To provide routing for the /quadrants endpoint
 var express = require("express");
 var mongodb = require("mongodb");
 var app = express();
