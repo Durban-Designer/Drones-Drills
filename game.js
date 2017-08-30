@@ -6,10 +6,10 @@ var port = 3003;
 var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
-require("./build/drone");
-var drones = require("./build/drones.js");
-require("./build/quadrant");
-var quadrants = require("./build/quadrants.js");
+require("./API/drone");
+var drones = require("./API/drones.js");
+require("./API/quadrant");
+var quadrants = require("./API/quadrants.js");
 
 
 mongoose.connect("mongodb://kenth56:123@ds034807.mlab.com:34807/database_baby", {
